@@ -7,7 +7,7 @@ from coldfront.config.base import INSTALLED_APPS, AUTHENTICATION_BACKENDS, TEMPL
 AUTHENTICATION_BACKENDS += [
     'django.contrib.auth.backends.ModelBackend',
 ]
-
+AUTH_USER_MODEL = 'ifxuser.IfxUser'
 LOGIN_URL = '/user/login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

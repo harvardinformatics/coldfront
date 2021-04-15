@@ -51,6 +51,13 @@ INSTALLED_APPS += [
     'simple_history',
 ]
 
+# IFX
+INSTALLED_APPS += [
+    'author',
+    'ifxuser',
+    'ifxbilling',
+]
+
 # ColdFront Apps
 INSTALLED_APPS += [
     'coldfront.core.user',
@@ -77,6 +84,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'simple_history.middleware.HistoryRequestMiddleware',
+    'author.middlewares.AuthorDefaultBackendMiddleware',
 ]
 
 #------------------------------------------------------------------------------
