@@ -1,6 +1,7 @@
 from datetime import datetime
 
-from django.contrib.auth.models import Group, User
+from django.contrib.auth.models import Group
+from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
 from model_utils.models import TimeStampedModel
@@ -65,7 +66,7 @@ class Resource(TimeStampedModel):
     is_allocatable = models.BooleanField(default=True)
     requires_payment = models.BooleanField(default=False)
     allowed_groups = models.ManyToManyField(Group, blank=True)
-    allowed_users = models.ManyToManyField(User, blank=True)
+    allowed_users = models.ManyToManyField(settings.AUTH_USER_MODEL, blank=True)
     linked_resources = models.ManyToManyField('self', blank=True)
     history = HistoricalRecords()
 
