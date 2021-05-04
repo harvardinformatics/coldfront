@@ -20,3 +20,4 @@ coldfront.db
 db.json
 .env
 coldfront.env
+docker-compose-local.yml

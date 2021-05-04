@@ -2,6 +2,13 @@ import os
 from split_settings.tools import optional, include
 from coldfront.config.env import ENV, PROJECT_ROOT
 
+# ifx
+IFX_APP = {
+    'name': 'coldfront',
+    'token': os.environ.get('COLDFRONT_IFX_APP_TOKEN', 'aslkdfj'),
+}
+FACILITY_NAME = 'Research Computing Storage'
+
 # ColdFront split settings
 coldfront_configs = [
     'base.py',
@@ -40,7 +47,7 @@ local_configs = [
      # System wide settings for production deployments
     '/etc/coldfront/local_settings.py',
 
-    # Local settings relative to coldfront project root 
+    # Local settings relative to coldfront project root
     PROJECT_ROOT('local_settings.py')
 ]
 
